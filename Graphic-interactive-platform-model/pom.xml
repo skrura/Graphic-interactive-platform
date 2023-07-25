@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>Graphic-interactive-platform</artifactId>
-        <groupId>com.heima</groupId>
+        <groupId>com.yh</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -10,7 +10,7 @@
     <artifactId>Graphic-interactive-platform-model</artifactId>
     <packaging>jar</packaging>
 
-    <name>heima-leadnews-model</name>
+    <name>Graphic-interactive-platform-model</name>
 
     <dependencies>
         <dependency>

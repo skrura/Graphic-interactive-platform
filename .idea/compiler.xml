@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Graphic-interactive-platform-service" />
         <module name="Graphic-interactive-platform-utils" />
+        <module name="yh-platform-user" />
         <module name="Graphic-interactive-platform-test" />
         <module name="Graphic-interactive-platform-gateway" />
         <module name="Graphic-interactive-platform-feign-api" />
@@ -21,15 +21,16 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Graphic-interactive-platform" options="" />
-      <module name="Graphic-interactive-platform-common" options="" />
-      <module name="Graphic-interactive-platform-feign-api" options="" />
-      <module name="Graphic-interactive-platform-gateway" options="" />
-      <module name="Graphic-interactive-platform-model" options="" />
-      <module name="Graphic-interactive-platform-service" options="" />
-      <module name="Graphic-interactive-platform-test" options="" />
-      <module name="Graphic-interactive-platform-utils" options="" />
+      <module name="Graphic-interactive-platform" options="-parameters" />
+      <module name="Graphic-interactive-platform-common" options="-parameters" />
+      <module name="Graphic-interactive-platform-feign-api" options="-parameters" />
+      <module name="Graphic-interactive-platform-gateway" options="-parameters" />
+      <module name="Graphic-interactive-platform-model" options="-parameters" />
+      <module name="Graphic-interactive-platform-service" options="-parameters" />
+      <module name="Graphic-interactive-platform-test" options="-parameters" />
+      <module name="Graphic-interactive-platform-utils" options="-parameters" />
       <module name="heima-leadnews-apis" options="-parameters" />
+      <module name="yh-platform-user" options="-parameters" />
     </option>
   </component>
 </project>
