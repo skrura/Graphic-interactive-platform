@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>yh-platform-user</module>
+        <module>yh-platform-article</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
@@ -22,6 +23,7 @@
 
     <dependencies>
         <!-- 引入依赖模块 -->
+
         <dependency>
             <groupId>com.yh</groupId>
             <artifactId>Graphic-interactive-platform-model</artifactId>

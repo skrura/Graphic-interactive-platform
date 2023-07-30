@@ -16,6 +16,7 @@
         <module>Graphic-interactive-platform-service</module>
         <module>Graphic-interactive-platform-gateway</module>
         <module>Graphic-interactive-platform-test</module>
+        <module>Graphic-interactive-platform-test/freemaker-test</module>
     </modules>
 
     <!-- 继承Spring boot工程 -->

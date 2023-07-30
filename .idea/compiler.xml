@@ -2,14 +2,17 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="freemaker-test" />
         <module name="Graphic-interactive-platform-utils" />
+        <module name="yh-platform-article" />
         <module name="yh-platform-user" />
         <module name="Graphic-interactive-platform-test" />
-        <module name="Graphic-interactive-platform-gateway" />
+        <module name="Graphic-interactive-platform-app-gateway" />
         <module name="Graphic-interactive-platform-feign-api" />
         <module name="Graphic-interactive-platform-common" />
         <module name="Graphic-interactive-platform-model" />
@@ -22,6 +25,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Graphic-interactive-platform" options="-parameters" />
+      <module name="Graphic-interactive-platform-app-gateway" options="-parameters" />
       <module name="Graphic-interactive-platform-common" options="-parameters" />
       <module name="Graphic-interactive-platform-feign-api" options="-parameters" />
       <module name="Graphic-interactive-platform-gateway" options="-parameters" />
@@ -29,7 +33,9 @@
       <module name="Graphic-interactive-platform-service" options="-parameters" />
       <module name="Graphic-interactive-platform-test" options="-parameters" />
       <module name="Graphic-interactive-platform-utils" options="-parameters" />
+      <module name="freemaker-test" options="-parameters" />
       <module name="heima-leadnews-apis" options="-parameters" />
+      <module name="yh-platform-article" options="-parameters" />
       <module name="yh-platform-user" options="-parameters" />
     </option>
   </component>
