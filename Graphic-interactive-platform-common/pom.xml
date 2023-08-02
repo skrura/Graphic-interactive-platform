@@ -10,7 +10,7 @@
     <artifactId>Graphic-interactive-platform-common</artifactId>
     <packaging>jar</packaging>
 
-    <name>heima-leadnews-common</name>
+    <name>Graphic-interactive-platform-common</name>
 
     <dependencies>
         <dependency>

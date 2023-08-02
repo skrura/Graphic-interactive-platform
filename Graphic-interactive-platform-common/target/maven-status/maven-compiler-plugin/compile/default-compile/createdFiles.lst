@@ -1,5 +1,0 @@
-com\yh\common\exception\ExceptionCatch.class
-com\yh\common\exception\CustomException.class
-com\yh\common\constants\ArticleConstants.class
-com\yh\common\swagger\Swagger2Configuration.class
-com\yh\common\swagger\SwaggerConfiguration.class

@@ -1,5 +1,0 @@
-com\yh\article\controller\v1\ArticleHomeController.class
-com\yh\article\service\ApArticleService.class
-com\yh\article\mapper\ApArticleMapper.class
-com\yh\article\ArticleApplication.class
-com\yh\article\service\impl\ApArticleServiceImpl.class

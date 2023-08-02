@@ -9,7 +9,8 @@
     </parent>
     <packaging>pom</packaging>
     <modules>
-        <module>Graphic-interactive-platform-app-gateway</module>
+        <module>yh-platform-app-gateway</module>
+        <module>yh-platform-wemedia-gateway</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 

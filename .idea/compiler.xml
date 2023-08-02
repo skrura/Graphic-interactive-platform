@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="1024" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
@@ -11,32 +12,35 @@
         <module name="Graphic-interactive-platform-utils" />
         <module name="yh-platform-article" />
         <module name="yh-platform-user" />
+        <module name="yh-platform-wemedia" />
+        <module name="yh-platform-app-gateway" />
         <module name="Graphic-interactive-platform-test" />
-        <module name="Graphic-interactive-platform-app-gateway" />
+        <module name="Graphic-interactive-platform-starter" />
+        <module name="yh-platform-wemedia-gateway" />
         <module name="Graphic-interactive-platform-feign-api" />
         <module name="Graphic-interactive-platform-common" />
         <module name="Graphic-interactive-platform-model" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="heima-leadnews-apis" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Graphic-interactive-platform" options="-parameters" />
-      <module name="Graphic-interactive-platform-app-gateway" options="-parameters" />
+      <module name="Graphic-interactive-platform-basic" options="-parameters" />
       <module name="Graphic-interactive-platform-common" options="-parameters" />
       <module name="Graphic-interactive-platform-feign-api" options="-parameters" />
       <module name="Graphic-interactive-platform-gateway" options="-parameters" />
       <module name="Graphic-interactive-platform-model" options="-parameters" />
       <module name="Graphic-interactive-platform-service" options="-parameters" />
+      <module name="Graphic-interactive-platform-starter" options="-parameters" />
       <module name="Graphic-interactive-platform-test" options="-parameters" />
       <module name="Graphic-interactive-platform-utils" options="-parameters" />
       <module name="freemaker-test" options="-parameters" />
-      <module name="heima-leadnews-apis" options="-parameters" />
+      <module name="yh-platform-app-gateway" options="-parameters" />
       <module name="yh-platform-article" options="-parameters" />
       <module name="yh-platform-user" options="-parameters" />
+      <module name="yh-platform-wemedia" options="-parameters" />
+      <module name="yh-platform-wemedia-gateway" options="-parameters" />
     </option>
   </component>
 </project>

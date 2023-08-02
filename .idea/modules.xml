@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Graphic-interactive-platform-common/Graphic-interactive-platform-common.iml" filepath="$PROJECT_DIR$/Graphic-interactive-platform-common/Graphic-interactive-platform-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-article/yh-platform-article.iml" filepath="$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-article/yh-platform-article.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-wemedia/yh-platform-wemedia.iml" filepath="$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-wemedia/yh-platform-wemedia.iml" />
     </modules>
   </component>
 </project>
