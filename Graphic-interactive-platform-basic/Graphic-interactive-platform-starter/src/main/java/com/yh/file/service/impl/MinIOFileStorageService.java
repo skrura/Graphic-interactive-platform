@@ -12,6 +12,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Import;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
 import java.io.ByteArrayOutputStream;
@@ -23,6 +24,7 @@ import java.util.Date;
 @Slf4j
 @EnableConfigurationProperties(MinIOConfigProperties.class)
 @Import(MinIOConfig.class)
+@Service
 public class MinIOFileStorageService implements FileStorageService {
 
     @Autowired

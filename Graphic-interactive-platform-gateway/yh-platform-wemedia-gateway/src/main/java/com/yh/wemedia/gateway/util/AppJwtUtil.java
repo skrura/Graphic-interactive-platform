@@ -13,7 +13,7 @@ public class AppJwtUtil {
     // 加密KEY
     private static final String TOKEN_ENCRY_KEY = "MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY";
     // 最小刷新间隔(S)
-    private static final int REFRESH_TIME = 300;
+    private static final int REFRESH_TIME = 3000;
 
     // 生产ID
     public static String getToken(Long id) {
@@ -24,7 +24,7 @@ public class AppJwtUtil {
                 .setId(UUID.randomUUID().toString())
                 .setIssuedAt(new Date(currentTime))  //签发时间
                 .setSubject("system")  //说明
-                .setIssuer("heima") //签发者信息
+                .setIssuer("yh") //签发者信息
                 .setAudience("app")  //接收用户
                 .compressWith(CompressionCodecs.GZIP)  //数据压缩方式
                 .signWith(SignatureAlgorithm.HS512, generalKey()) //加密方式
