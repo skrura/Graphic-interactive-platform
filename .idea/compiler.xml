@@ -10,16 +10,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="freemaker-test" />
         <module name="Graphic-interactive-platform-utils" />
-        <module name="yh-platform-article" />
         <module name="yh-platform-user" />
         <module name="yh-platform-wemedia" />
-        <module name="yh-platform-app-gateway" />
         <module name="Graphic-interactive-platform-test" />
         <module name="Graphic-interactive-platform-starter" />
-        <module name="yh-platform-wemedia-gateway" />
         <module name="Graphic-interactive-platform-feign-api" />
-        <module name="Graphic-interactive-platform-common" />
         <module name="Graphic-interactive-platform-model" />
+        <module name="yh-platform-schedule" />
+        <module name="yh-platform-article" />
+        <module name="yh-platform-app-gateway" />
+        <module name="yh-platform-wemedia-gateway" />
+        <module name="Graphic-interactive-platform-common" />
       </profile>
     </annotationProcessing>
   </component>
@@ -38,6 +39,7 @@
       <module name="freemaker-test" options="-parameters" />
       <module name="yh-platform-app-gateway" options="-parameters" />
       <module name="yh-platform-article" options="-parameters" />
+      <module name="yh-platform-schedule" options="-parameters" />
       <module name="yh-platform-user" options="-parameters" />
       <module name="yh-platform-wemedia" options="-parameters" />
       <module name="yh-platform-wemedia-gateway" options="-parameters" />

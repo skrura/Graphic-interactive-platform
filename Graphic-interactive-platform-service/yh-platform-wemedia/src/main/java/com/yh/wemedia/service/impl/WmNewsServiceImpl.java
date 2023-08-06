@@ -21,6 +21,7 @@ import com.yh.utils.thread.WmThreadLocalUtil;
 import com.yh.wemedia.mapper.WmMaterialMapper;
 import com.yh.wemedia.mapper.WmNewsMapper;
 import com.yh.wemedia.mapper.WmNewsMaterialMapper;
+import com.yh.wemedia.service.WmNewsAutoScanService;
 import com.yh.wemedia.service.WmNewsService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -98,6 +99,14 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
         return responseResult;
     }
 
+    @Autowired
+    private WmNewsAutoScanService wmNewsAutoScanService;
+
+    /**
+     * 发布修改文章或保存为草稿
+     * @param dto
+     * @return
+     */
     @Override
     public ResponseResult submitNews(WmNewsDto dto) {
         //0.条件判断
@@ -133,8 +142,12 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
         List<String> materials =  ectractUrlInfo(dto.getContent());
         saveRelativeInfoForContent(materials,wmNews.getId());
 
+
         //4.不是草稿，保存文章封面图片与素材的关系，如果当前布局是自动，需要匹配封面图片
         saveRelativeInfoForCover(dto,wmNews,materials);
+
+        //审核文章
+        wmNewsAutoScanService.autoScanWmNews(wmNews.getId());
 
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
 
@@ -251,7 +264,7 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
      * @param wmNews
      */
     private void saveOrUpdateWmNews(WmNews wmNews) {
-        //补全属性
+        // 补全属性
         wmNews.setUserId(WmThreadLocalUtil.getUser().getId());
         wmNews.setCreatedTime(new Date());
         wmNews.setSubmitedTime(new Date());

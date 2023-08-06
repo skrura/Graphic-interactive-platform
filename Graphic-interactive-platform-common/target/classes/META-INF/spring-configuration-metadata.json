@@ -1,0 +1,57 @@
+{
+  "groups": [
+    {
+      "name": "aliyun",
+      "type": "com.yh.common.aliyun.GreenImageScan",
+      "sourceType": "com.yh.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun",
+      "type": "com.yh.common.aliyun.GreenTextScan",
+      "sourceType": "com.yh.common.aliyun.GreenTextScan"
+    },
+    {
+      "name": "tess4j",
+      "type": "com.yh.common.tess4j.Tess4jClient",
+      "sourceType": "com.yh.common.tess4j.Tess4jClient"
+    }
+  ],
+  "properties": [
+    {
+      "name": "aliyun.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.yh.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun.access-key-id",
+      "type": "java.lang.String",
+      "sourceType": "com.yh.common.aliyun.GreenTextScan"
+    },
+    {
+      "name": "aliyun.scenes",
+      "type": "java.lang.String",
+      "sourceType": "com.yh.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.yh.common.aliyun.GreenImageScan"
+    },
+    {
+      "name": "aliyun.secret",
+      "type": "java.lang.String",
+      "sourceType": "com.yh.common.aliyun.GreenTextScan"
+    },
+    {
+      "name": "tess4j.data-path",
+      "type": "java.lang.String",
+      "sourceType": "com.yh.common.tess4j.Tess4jClient"
+    },
+    {
+      "name": "tess4j.language",
+      "type": "java.lang.String",
+      "sourceType": "com.yh.common.tess4j.Tess4jClient"
+    }
+  ],
+  "hints": []
+}

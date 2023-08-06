@@ -116,7 +116,7 @@ public class SensitiveWordUtil {
         list.add("法轮功");
         list.add("冰毒");
         initMap(list);
-        String content="我是一个好人，并不会卖冰毒，也不操练法轮功,我真的不卖冰毒";
+        String content="我是一个好人，并不会卖冰，也不操练法功,我真的不卖冰";
         Map<String, Integer> map = matchWords(content);
         System.out.println(map);
     }

@@ -12,6 +12,7 @@
         <module>yh-platform-user</module>
         <module>yh-platform-article</module>
         <module>yh-platform-wemedia</module>
+        <module>yh-platform-schedule</module>
     </modules>
     <modelVersion>4.0.0</modelVersion>
 
