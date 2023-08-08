@@ -14,6 +14,7 @@
         <module name="yh-platform-wemedia" />
         <module name="Graphic-interactive-platform-test" />
         <module name="Graphic-interactive-platform-starter" />
+        <module name="kafka-demo" />
         <module name="Graphic-interactive-platform-feign-api" />
         <module name="Graphic-interactive-platform-model" />
         <module name="yh-platform-schedule" />
@@ -37,6 +38,7 @@
       <module name="Graphic-interactive-platform-test" options="-parameters" />
       <module name="Graphic-interactive-platform-utils" options="-parameters" />
       <module name="freemaker-test" options="-parameters" />
+      <module name="kafka-demo" options="-parameters" />
       <module name="yh-platform-app-gateway" options="-parameters" />
       <module name="yh-platform-article" options="-parameters" />
       <module name="yh-platform-schedule" options="-parameters" />

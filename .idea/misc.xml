@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-wemedia/pom.xml" />
+        <option value="$PROJECT_DIR$/Graphic-interactive-platform-test/kafka-demo/pom.xml" />
       </list>
     </option>
   </component>

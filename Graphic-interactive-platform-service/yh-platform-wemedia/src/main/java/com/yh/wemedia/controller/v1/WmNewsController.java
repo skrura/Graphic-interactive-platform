@@ -22,8 +22,14 @@ public class WmNewsController {
     public ResponseResult findAll(@RequestBody WmNewsPageReqDto dto){
         return  wmNewsService.findAll(dto);
     }
+
     @PostMapping("/submit")
     public ResponseResult submitNews(@RequestBody WmNewsDto dto){
         return  wmNewsService.submitNews(dto);
+    }
+
+    @PostMapping("down_or_up")
+    public ResponseResult downOrUp(@RequestBody WmNewsDto dto){
+        return wmNewsService.downOrUp(dto);
     }
 }
