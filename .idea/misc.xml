@@ -7,6 +7,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-wemedia/pom.xml" />
         <option value="$PROJECT_DIR$/Graphic-interactive-platform-test/kafka-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/Graphic-interactive-platform-test/es-init/pom.xml" />
+        <option value="$PROJECT_DIR$/Graphic-interactive-platform-service/heima-leadnews-search/heima-leadnews-search/pom.xml" />
+        <option value="$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-search/pom.xml" />
       </list>
     </option>
   </component>

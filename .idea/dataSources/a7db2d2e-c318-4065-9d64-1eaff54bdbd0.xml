@@ -1002,41 +1002,348 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     <schema id="290" parent="1" name="performance_schema">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="291" parent="1" name="sys">
+    <schema id="291" parent="1" name="test">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="292" parent="1" name="test">
+    <schema id="292" parent="1" name="cloud">
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <schema id="293" parent="1" name="cloud">
-      <CollationName>utf8mb4_0900_ai_ci</CollationName>
-    </schema>
-    <schema id="294" parent="1" name="leadnews_user">
+    <schema id="293" parent="1" name="leadnews_user">
       <Current>1</Current>
       <CollationName>utf8mb4_unicode_ci</CollationName>
     </schema>
-    <user id="295" parent="1" name="itcart">
+    <schema id="294" parent="1" name="leadnews_article">
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </schema>
+    <schema id="295" parent="1" name="leadnews_wemedia">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="296" parent="1" name="leadnews_schedule">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="297" parent="1" name="itcart">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="mysql.infoschema">
+    <user id="298" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="mysql.session">
+    <user id="299" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="298" parent="1" name="mysql.sys">
+    <user id="300" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="299" parent="1" name="root">
+    <user id="301" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
+    <table id="302" parent="293" name="ap_user">
+      <Comment>APP用户信息表</Comment>
+      <Engine>InnoDB</Engine>
+      <Options>row_format
+DYNAMIC</Options>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="303" parent="293" name="ap_user_fan">
+      <Comment>APP用户粉丝信息表</Comment>
+      <Engine>InnoDB</Engine>
+      <Options>row_format
+DYNAMIC</Options>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="304" parent="293" name="ap_user_follow">
+      <Comment>APP用户关注信息表</Comment>
+      <Engine>InnoDB</Engine>
+      <Options>row_format
+DYNAMIC</Options>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <table id="305" parent="293" name="ap_user_realname">
+      <Comment>APP实名认证信息表</Comment>
+      <Engine>InnoDB</Engine>
+      <Options>row_format
+DYNAMIC</Options>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
+    </table>
+    <column id="306" parent="302" name="id">
+      <AutoIncrement>6</AutoIncrement>
+      <Comment>主键</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="307" parent="302" name="salt">
+      <Comment>密码、通信等加密盐</Comment>
+      <DasType>varchar(32)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="308" parent="302" name="name">
+      <Comment>用户名</Comment>
+      <DasType>varchar(20)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="309" parent="302" name="password">
+      <Comment>密码,md5加密</Comment>
+      <DasType>varchar(32)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="310" parent="302" name="phone">
+      <Comment>手机号</Comment>
+      <DasType>varchar(11)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="311" parent="302" name="image">
+      <Comment>头像</Comment>
+      <DasType>varchar(255)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="312" parent="302" name="sex">
+      <Comment>0 男&#xd;
+            1 女&#xd;
+            2 未知</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="313" parent="302" name="is_certification">
+      <Comment>0 未&#xd;
+            1 是</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="314" parent="302" name="is_identity_authentication">
+      <Comment>是否身份认证</Comment>
+      <DasType>tinyint(1)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="315" parent="302" name="status">
+      <Comment>0正常&#xd;
+            1锁定</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="316" parent="302" name="flag">
+      <Comment>0 普通用户&#xd;
+            1 自媒体人&#xd;
+            2 大V</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="317" parent="302" name="created_time">
+      <Comment>注册时间</Comment>
+      <DasType>datetime|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <index id="318" parent="302" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="319" parent="302" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="320" parent="303" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <Comment>主键</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="321" parent="303" name="user_id">
+      <Comment>用户ID</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="322" parent="303" name="fans_id">
+      <Comment>粉丝ID</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="323" parent="303" name="fans_name">
+      <Comment>粉丝昵称</Comment>
+      <DasType>varchar(20)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="324" parent="303" name="level">
+      <Comment>粉丝忠实度&#xd;
+            0 正常&#xd;
+            1 潜力股&#xd;
+            2 勇士&#xd;
+            3 铁杆&#xd;
+            4 老铁</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="325" parent="303" name="created_time">
+      <Comment>创建时间</Comment>
+      <DasType>datetime|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="326" parent="303" name="is_display">
+      <Comment>是否可见我动态</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="327" parent="303" name="is_shield_letter">
+      <Comment>是否屏蔽私信</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="328" parent="303" name="is_shield_comment">
+      <Comment>是否屏蔽评论</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <index id="329" parent="303" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="330" parent="303" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="331" parent="304" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <Comment>主键</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="332" parent="304" name="user_id">
+      <Comment>用户ID</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="333" parent="304" name="follow_id">
+      <Comment>关注作者ID</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="334" parent="304" name="follow_name">
+      <Comment>粉丝昵称</Comment>
+      <DasType>varchar(20)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="335" parent="304" name="level">
+      <Comment>关注度&#xd;
+            0 偶尔感兴趣&#xd;
+            1 一般&#xd;
+            2 经常&#xd;
+            3 高度</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="336" parent="304" name="is_notice">
+      <Comment>是否动态通知</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="337" parent="304" name="created_time">
+      <Comment>创建时间</Comment>
+      <DasType>datetime|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <index id="338" parent="304" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="339" parent="304" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="340" parent="305" name="id">
+      <AutoIncrement>5</AutoIncrement>
+      <Comment>主键</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="341" parent="305" name="user_id">
+      <Comment>账号ID</Comment>
+      <DasType>int unsigned|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="342" parent="305" name="name">
+      <Comment>用户名称</Comment>
+      <DasType>varchar(20)|0s</DasType>
+      <Position>3</Position>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </column>
+    <column id="343" parent="305" name="idno">
+      <Comment>资源名称</Comment>
+      <DasType>varchar(20)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="344" parent="305" name="font_image">
+      <Comment>正面照片</Comment>
+      <DasType>varchar(100)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="345" parent="305" name="back_image">
+      <Comment>背面照片</Comment>
+      <DasType>varchar(100)|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="346" parent="305" name="hold_image">
+      <Comment>手持照片</Comment>
+      <DasType>varchar(100)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="347" parent="305" name="live_image">
+      <Comment>活体照片</Comment>
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="348" parent="305" name="status">
+      <Comment>状态&#xd;
+            0 创建中&#xd;
+            1 待审核&#xd;
+            2 审核失败&#xd;
+            9 审核通过</Comment>
+      <DasType>tinyint unsigned|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="349" parent="305" name="reason">
+      <Comment>拒绝原因</Comment>
+      <DasType>varchar(50)|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <column id="350" parent="305" name="created_time">
+      <Comment>创建时间</Comment>
+      <DasType>datetime|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="351" parent="305" name="submited_time">
+      <Comment>提交时间</Comment>
+      <DasType>datetime|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <column id="352" parent="305" name="updated_time">
+      <Comment>更新时间</Comment>
+      <DasType>datetime|0s</DasType>
+      <Position>13</Position>
+    </column>
+    <index id="353" parent="305" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="354" parent="305" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>

@@ -18,8 +18,10 @@
         <module name="Graphic-interactive-platform-feign-api" />
         <module name="Graphic-interactive-platform-model" />
         <module name="yh-platform-schedule" />
+        <module name="es-init" />
         <module name="yh-platform-article" />
         <module name="yh-platform-app-gateway" />
+        <module name="yh-platform-search" />
         <module name="yh-platform-wemedia-gateway" />
         <module name="Graphic-interactive-platform-common" />
       </profile>
@@ -37,11 +39,13 @@
       <module name="Graphic-interactive-platform-starter" options="-parameters" />
       <module name="Graphic-interactive-platform-test" options="-parameters" />
       <module name="Graphic-interactive-platform-utils" options="-parameters" />
+      <module name="es-init" options="-parameters" />
       <module name="freemaker-test" options="-parameters" />
       <module name="kafka-demo" options="-parameters" />
       <module name="yh-platform-app-gateway" options="-parameters" />
       <module name="yh-platform-article" options="-parameters" />
       <module name="yh-platform-schedule" options="-parameters" />
+      <module name="yh-platform-search" options="-parameters" />
       <module name="yh-platform-user" options="-parameters" />
       <module name="yh-platform-wemedia" options="-parameters" />
       <module name="yh-platform-wemedia-gateway" options="-parameters" />
