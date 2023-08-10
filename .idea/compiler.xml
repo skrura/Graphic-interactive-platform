@@ -23,6 +23,7 @@
         <module name="yh-platform-app-gateway" />
         <module name="yh-platform-search" />
         <module name="yh-platform-wemedia-gateway" />
+        <module name="mongo-demo" />
         <module name="Graphic-interactive-platform-common" />
       </profile>
     </annotationProcessing>
@@ -42,6 +43,7 @@
       <module name="es-init" options="-parameters" />
       <module name="freemaker-test" options="-parameters" />
       <module name="kafka-demo" options="-parameters" />
+      <module name="mongo-demo" options="-parameters" />
       <module name="yh-platform-app-gateway" options="-parameters" />
       <module name="yh-platform-article" options="-parameters" />
       <module name="yh-platform-schedule" options="-parameters" />
