@@ -5,10 +5,9 @@ import com.yh.model.wemedia.dtos.WmNewsDto;
 import com.yh.model.wemedia.dtos.WmNewsPageReqDto;
 import com.yh.wemedia.service.WmNewsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/api/v1/news")
@@ -31,5 +30,10 @@ public class WmNewsController {
     @PostMapping("down_or_up")
     public ResponseResult downOrUp(@RequestBody WmNewsDto dto){
         return wmNewsService.downOrUp(dto);
+    }
+
+    @GetMapping("del_news/{id}")
+    public ResponseResult delNews(@PathVariable int id,HttpServletRequest request){
+        return wmNewsService.delNews(id,request);
     }
 }

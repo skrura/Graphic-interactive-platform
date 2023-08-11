@@ -10,12 +10,14 @@
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-feign-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-gateway/yh-platform-admin-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-gateway/yh-platform-app-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-gateway/yh-platform-wemedia-gateway/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-model/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-model/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-admin/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-article/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-schedule/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Graphic-interactive-platform-service/yh-platform-search/src/main/java" charset="UTF-8" />

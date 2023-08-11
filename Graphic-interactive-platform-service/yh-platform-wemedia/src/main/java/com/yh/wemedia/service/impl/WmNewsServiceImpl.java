@@ -11,6 +11,7 @@ import com.yh.common.exception.CustomException;
 import com.yh.model.common.dtos.PageResponseResult;
 import com.yh.model.common.dtos.ResponseResult;
 import com.yh.model.common.enums.AppHttpCodeEnum;
+import com.yh.model.article.pojos.ApArticleConfig;
 import com.yh.model.wemedia.dtos.WmNewsDto;
 import com.yh.model.wemedia.dtos.WmNewsPageReqDto;
 import com.yh.model.wemedia.pojos.WmMaterial;
@@ -18,6 +19,7 @@ import com.yh.model.wemedia.pojos.WmNews;
 import com.yh.model.wemedia.pojos.WmNewsMaterial;
 import com.yh.model.wemedia.pojos.WmUser;
 import org.apache.kafka.clients.producer.RecordMetadata;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.core.KafkaTemplate;
 import com.yh.common.constants.WemediaConstants;
 import com.yh.utils.thread.WmThreadLocalUtil;
@@ -36,6 +38,7 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.stream.Collectors;
@@ -91,6 +94,14 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
         //查询当前登录用户的文章
         lambdaQueryWrapper.eq(WmNews::getUserId,user.getId());
 
+
+
+        // 添加判断条件，如果ap_article_config表中的isDelete字段为1，则不加载该文章
+       /* lambdaQueryWrapper.notExists(
+                Wrappers.<WmNews>lambdaQuery().eq(WmNews::getArticleId, ApArticleConfig::getArticleId)
+                        .ne(ApArticleConfig::getIsDelete, 1)
+        );*/
+
         //发布时间倒序查询
         lambdaQueryWrapper.orderByDesc(WmNews::getCreatedTime);
 
@@ -102,6 +113,7 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
 
         return responseResult;
     }
+
 
     @Autowired
     private WmNewsAutoScanService wmNewsAutoScanService;
@@ -331,4 +343,47 @@ public class WmNewsServiceImpl  extends ServiceImpl<WmNewsMapper, WmNews> implem
         }
         return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
     }
+
+    /**
+     * 文章的删除
+     *
+     * @param request
+     * @return
+     */
+    @Override
+    public ResponseResult delNews(int id,HttpServletRequest request) {
+
+        if(id == 0){
+            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID);
+        }
+
+        //2.查询文章
+        WmNews wmNews = getById(id);
+        if(wmNews == null){
+            return ResponseResult.errorResult(AppHttpCodeEnum.DATA_NOT_EXIST,"文章不存在");
+        }
+
+        //3.判断文章是否已发布
+        if(!wmNews.getStatus().equals(WmNews.Status.PUBLISHED.getCode())){
+            return ResponseResult.errorResult(AppHttpCodeEnum.PARAM_INVALID,"当前文章不是发布状态，不能删除");
+        }
+
+
+            //发送消息，通知article端修改文章配置
+            if(wmNews.getArticleId() != null){
+                String sid = String.valueOf(wmNews.getArticleId());
+                kafkaTemplate.send(WmNewsMessageConstants.WM_NEWS_DEL_NEWS_TOPIC, JSON.toJSONString(sid));
+            }
+
+            return ResponseResult.okResult(AppHttpCodeEnum.SUCCESS);
+        }
+
+    @Override
+    public void realdelnews(String id) {
+        LambdaQueryWrapper<WmNews> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(WmNews::getArticleId,id);
+        remove(lambdaQueryWrapper);
+    }
+
+
 }

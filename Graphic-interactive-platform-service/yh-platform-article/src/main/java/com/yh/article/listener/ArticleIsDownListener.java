@@ -19,11 +19,19 @@ public class ArticleIsDownListener {
     private ApArticleConfigService apArticleConfigService;
 
     @KafkaListener(topics = WmNewsMessageConstants.WM_NEWS_UP_OR_DOWN_TOPIC)
-    public void onMessage(String message){
+    public void onMessageUpOrDown(String message){
         if(StringUtils.isNotBlank(message)){
             Map map = JSON.parseObject(message, Map.class);
-            apArticleConfigService.updateByMap(map);
+            apArticleConfigService.updateByMapUpOrDown(map);
             log.info("article端文章配置修改，articleId={}",map.get("articleId"));
+        }
+    }
+    @KafkaListener(topics = WmNewsMessageConstants.WM_NEWS_DEL_NEWS_TOPIC)
+    public void onMessageDelNews(String message){
+        if(StringUtils.isNotBlank(message)){
+            String id = JSON.parseObject(message, String.class);
+            apArticleConfigService.updateByIdDelNews(id);
+            //log.info("article端文章配置修改，articleId={}",map.get("articleId"));
         }
     }
 }
